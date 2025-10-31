@@ -1,0 +1,29 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    configure)
+    MYUSER=$( getent passwd 1000 | cut -d: -f1 )
+
+    [ ! -f /etc/lightdm/lightdm.conf.dist ] && mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.dist
+    cat /usr/share/kosmos-autologin/light.conf.templ | sed "s/USERNAME/$MYUSER/" > /etc/lightdm/lightdm.conf
+
+    [ ! -f /etc/lightdm/lightdm-gtk-greeter.conf.dist ] && mv /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.dist
+    cp /usr/share/kosmos-autologin/lightdm-gtk-greeter.conf /etc/lightdm/
+    systemctl disable sddm
+    systemctl enable lightdm
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+
+#DEBHELPER#
+
+exit 0

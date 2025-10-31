@@ -1,0 +1,2 @@
+lightdm.conf.templ /usr/share/kosmos-autologin
+lightdm-gtk-greeter.conf /usr/share/kosmos-autologin

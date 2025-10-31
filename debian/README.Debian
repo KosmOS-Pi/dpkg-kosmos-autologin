@@ -1,0 +1,7 @@
+kosmos-autologin for Debian
+
+This package depends on lightdm, and replaces its default config with a custom one that enables autologin with first non-system user (the one with ID = 1000). Default config files inside /etc/lightdm are renamed as <filename>.conf.dist, sddm start at boot is disabled, lightdm is enabled. Customizaed config files are always stored in /usr/share/kosmos-autologin: if you modify files in /etc/lightdm and want to restore them as this package install-time, just run:
+
+> sudo dpkg-reconfigure kosmos-autologin
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Fri, 31 Oct 2025 12:54:34 +0100
