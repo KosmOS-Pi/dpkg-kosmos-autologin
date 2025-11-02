@@ -6,7 +6,7 @@ case "$1" in
     MYUSER=$( getent passwd 1000 | cut -d: -f1 )
 
     [ ! -f /etc/lightdm/lightdm.conf.dist ] && mv /etc/lightdm/lightdm.conf /etc/lightdm/lightdm.conf.dist
-    cat /usr/share/kosmos-autologin/light.conf.templ | sed "s/USERNAME/$MYUSER/" > /etc/lightdm/lightdm.conf
+    cat /usr/share/kosmos-autologin/lightdm.conf.templ | sed "s/USERNAME/$MYUSER/" > /etc/lightdm/lightdm.conf
 
     [ ! -f /etc/lightdm/lightdm-gtk-greeter.conf.dist ] && mv /etc/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf.dist
     cp /usr/share/kosmos-autologin/lightdm-gtk-greeter.conf /etc/lightdm/
