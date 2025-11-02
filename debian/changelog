@@ -1,3 +1,9 @@
+kosmos-autologin (1.2-1) bookworm; urgency=medium
+
+  * Use sddm instead of lightdm.
+
+ -- Matteo Piscitelli <matteo@matteopiscitelli.it>  Sun, 02 Nov 2025 23:39:43 +0000
+
 kosmos-autologin (1.1-1) bookworm; urgency=medium
 
   * Fix postinst fails creating lightdm.conf.

@@ -10,7 +10,7 @@ Rules-Requires-Root: no
 Package: kosmos-autologin
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, lightdm
+Depends: ${misc:Depends}, sddm
 Description: Graphical autologin.
  This package configures the system to autologin with its first
  non-system user (ID 1000).

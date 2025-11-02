@@ -1,2 +1,2 @@
-lightdm.conf.templ /usr/share/kosmos-autologin
-lightdm-gtk-greeter.conf /usr/share/kosmos-autologin
+autologin.conf.templ /usr/share/kosmos-autologin/
+01-vt1.conf /etc/sddm.conf.d/
